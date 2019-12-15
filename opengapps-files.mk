@@ -57,6 +57,12 @@ ifeq ($(filter $(GAPPS_PIXEL2017_CODENAMES),$(TARGET_PRODUCT)),)
   gapps_framework_files := $(filter-out %com.google.android.camera.experimental2017.jar,$(gapps_framework_files))
 endif
 
+# Remove facelock package TODO: Make for all Models not just 2017
+ifeq ($(filter $(GAPPS_PIXEL2017_CODENAMES),$(TARGET_PRODUCT)),)
+  gapps_etc_files := $(filter-out %permissions/com.android.facelock.xml,$(gapps_etc_files))
+  gapps_framework_files := $(filter-out %com.android.facelock.jar,$(gapps_framework_files))
+endif
+
 # Remove experimental2018 camera on non-Pixel 2018 devices
 ifeq ($(filter $(GAPPS_PIXEL2018_CODENAMES),$(TARGET_PRODUCT)),)
   gapps_etc_files := $(filter-out %permissions/com.google.android.camera.experimental2018.xml,$(gapps_etc_files))
