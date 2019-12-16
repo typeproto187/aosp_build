@@ -5,9 +5,9 @@ include vendor/opengapps/build/opengapps-files.mk
 DEVICE_PACKAGE_OVERLAYS += \
     $(GAPPS_DEVICE_FILES_PATH)/overlay/pico
 
-ifneq ($(filter 28,$(call get-allowed-api-levels)),)
+ifneq ($(filter 29,$(call get-allowed-api-levels)),)
 DEVICE_PACKAGE_OVERLAYS += \
-    $(GAPPS_DEVICE_FILES_PATH)/overlay/assistant/28
+    $(GAPPS_DEVICE_FILES_PATH)/overlay/assistant/29
 endif
 
 GAPPS_PRODUCT_PACKAGES += \
@@ -22,6 +22,8 @@ GAPPS_PRODUCT_PACKAGES += \
     SetupWizard \
     Phonesky \
     GoogleCalendarSyncAdapter
+
+GAPPS_EXCLUDED_PACKAGES := FaceLock
 
 ifneq ($(filter 23,$(call get-allowed-api-levels)),)
 GAPPS_PRODUCT_PACKAGES += \
@@ -57,7 +59,7 @@ GAPPS_PRODUCT_PACKAGES += \
     FaceLock \
     Velvet
 
-ifneq ($(filter 28,$(call get-allowed-api-levels)),)
+ifneq ($(filter 29,$(call get-allowed-api-levels)),)
 GAPPS_PRODUCT_PACKAGES += \
     DigitalWellbeing \
     MarkupGoogle \
@@ -148,7 +150,7 @@ GAPPS_PRODUCT_PACKAGES += \
     TranslatePrebuilt \
     GoogleZhuyinIME
 
-ifneq ($(filter 28,$(call get-allowed-api-levels)),)
+ifneq ($(filter 29,$(call get-allowed-api-levels)),)
 GAPPS_PRODUCT_PACKAGES += \
     ActionsServices
 endif
@@ -218,9 +220,9 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(GAPPS_DEVICE_FILES_PATH)/overlay/pixelicons/25
 endif
 
-ifneq ($(filter 28,$(call get-allowed-api-levels)),)
+ifneq ($(filter 29,$(call get-allowed-api-levels)),)
 DEVICE_PACKAGE_OVERLAYS += \
-    $(GAPPS_DEVICE_FILES_PATH)/overlay/pixellauncher/28
+    $(GAPPS_DEVICE_FILES_PATH)/overlay/pixellauncher/29
 endif
 
 ifneq ($(filter 25,$(call get-allowed-api-levels)),)
