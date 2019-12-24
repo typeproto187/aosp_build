@@ -23,8 +23,6 @@ GAPPS_PRODUCT_PACKAGES += \
     Phonesky \
     GoogleCalendarSyncAdapter
 
-GAPPS_EXCLUDED_PACKAGES := FaceLock
-
 ifneq ($(filter 23,$(call get-allowed-api-levels)),)
 GAPPS_PRODUCT_PACKAGES += \
     GoogleTTS \
